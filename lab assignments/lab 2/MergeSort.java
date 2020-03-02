@@ -24,6 +24,19 @@ public class MergeSort {
 		{
 			right[j] = array[m + 1 + j];
 		}
+		/*
+		int k = l;
+		while (i < n1 && j < n2) {
+		if (Left[i] <= Right[j]) {
+			array[k] = Left[i];
+			i++;
+		}
+		else {
+			array[k] = Right[j];
+			j++;
+		}
+		k++;
+		*/
 		
 		// why is this? pls explain
 		for(int i = 0; i < n1; i++)
@@ -69,24 +82,27 @@ public class MergeSort {
   	//p is left
   	//q is middle
   	//r is right
+	/* Sort the array */
 	public void Sort(int array[], int mLeft, int mRight)
 	{
 		if(mLeft < mRight)
 		{
-			int mMiddle = (mLeft + mRight) / 2;
-			Sort(array, mLeft, mMiddle);
-			Sort(array, mMiddle + 1, mRight);
-			merge(array, mLeft, mMiddle, mRight);	
+			int mMiddle = (mLeft + mRight) / 2; //Locate the mid point
+			Sort(array, mLeft, mMiddle); //Sort the first sectin
+			Sort(array, mMiddle + 1, mRight); //Sort the second section
+			merge(array, mLeft, mMiddle, mRight); //Merge both the sections
 		}
 	}
 	
+	/* Prints the elements of the array */
 	public static void printArray(int array[])
 	{
 		int a = array.length;
 		for(int i = 0; i < a; i++)
 		{
 			System.out.print(array[i] + " ");
-		}	
+		} //Ends for loop
+		System.out.println();
 	}
 	
 	public static void main(String args[])
