@@ -27,7 +27,7 @@ public class MergeSort {
 
 		while (i < n1 && j < n2)
 		{
-			//count the no of comparisons
+			//count the number of comparisons
 			count++;
 			if (left[i] <= right[j])
 			{
@@ -62,10 +62,10 @@ public class MergeSort {
 	/* Merge the sections */
 	public static void mergeSort(int array[], int mLeft, int mRight) {
 		if(mLeft < mRight) {
-			int mMiddle = (mLeft + mRight) / 2;
-			mergeSort(array, mLeft, mMiddle);
-			mergeSort(array, mMiddle + 1, mRight);
-			Merge(array, mLeft, mMiddle, mRight);
+			int mMiddle = (mLeft + mRight) / 2; //Locates the mid point
+			mergeSort(array, mLeft, mMiddle); //merge left section
+			mergeSort(array, mMiddle + 1, mRight); //merge right section
+			Merge(array, mLeft, mMiddle, mRight); //merge both left and right sections
 		}
 	}
 	
@@ -79,15 +79,15 @@ public class MergeSort {
 	
 	/* Main runner */
 	public static void main(String args[]) {
-		int[] array = new int [args.length];
+		int[] array = new int [args.length]; //array through command line
 		for (int i = 0; i < args.length; i++) {
 			array[i] = Integer.parseInt(args[i]);
 		} //Ends for loop
 		System.out.println("Unsorted array: ");
-		printArray(array); //prints unsorted
+		printArray(array); //prints unsorted array
 		System.out.println("\nSorted array: ");
 		mergeSort(array, 0, array.length - 1); //calls mergeSort
 		printArray(array); //prints sorted array
-		System.out.println("\nNumber of comparisons: " + count);
+		System.out.println("\nNumber of comparisons: " + count); //prints number of comparisons
 	} //Ends main
 } //Ends MergeSort
