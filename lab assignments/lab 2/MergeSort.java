@@ -6,13 +6,11 @@
 
 import java.util.*;
 
-public class MergeSort
-{
+public class MergeSort {
 	int count;
 	
 	/* Divides the array into subarrays that are then merged */
-	public void Merge(int array[], int l, int m, int r)
-	{
+	public void Merge(int array[], int l, int m, int r) {
 		int n1 = m - l + 1;
 		int n2 = r - m;
 		
@@ -20,14 +18,12 @@ public class MergeSort
 		int right[] = new int [n2];
 		
 		/* left section of the main array is stored in left array */
-		for(int i = 0; i < n1; i++)
-		{
+		for(int i = 0; i < n1; i++) {
 			left[i]  = array[l + i];
 		}
 		
 		/* right section of the main array is stored in the right array */
-		for(int j = 0; j < n2; j++)
-		{
+		for(int j = 0; j < n2; j++) {
 			right[j] = array[m + 1 + j];
 		}
 		
@@ -47,10 +43,8 @@ public class MergeSort
 		}
 	}
 	
-	public void mergeSort(int array[], int mLeft, int mRight)
-	{
-		if(mLeft < mRight)
-		{
+	public void mergeSort(int array[], int mLeft, int mRight) {
+		if(mLeft < mRight) {
 			int mMiddle = (mLeft + mRight) / 2;
 			mergeSort(array, mLeft, mMiddle);
 			mergeSort(array, mMiddle + 1, mRight);
@@ -59,8 +53,7 @@ public class MergeSort
 	}
 	
 	/* Prints the elements of the array */
-	public static void printArray(int array[])
-	{
+	public static void printArray(int array[]) {
 		int a = array.length;
 		for(int i = 0; i < a; i++) {
 			System.out.print(array[i] + " ");
@@ -71,8 +64,7 @@ public class MergeSort
 		int[] array = new int [20];
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter elements: ");
-		for (int i = 0; i < a.length; i++)
-		{
+		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i]);
 		} //Ends for loop
 		System.out.println("\nUnsorted Array");
