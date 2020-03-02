@@ -33,17 +33,37 @@ public class MergeSort
 		
 		int i = 0;
 		int j = 0;
-		
-		for(int k = l; k < r; k++) {
+		int k = l;
+
+		while (i < n1 && j < n2)
+		{
+			//count the no of comparisons
 			count++;
-			if(left[i] <= right[j]) {
+			if (left[i] <= right[j])
+			{
 				array[k] = left[i];
 				i++;
 			}
-			else {
+			else
+			{
 				array[k] = right[j];
 				j++;
 			}
+			k++;
+		}
+		//Copy remaining elements
+		while (i < n1)
+		{
+			array[k] = left[i];
+			i++;
+			k++;
+		}
+		//Copy remaining elements
+		while (j < n2)
+		{
+			array[k] = right[j];
+			j++;
+			k++;
 		}
 	}
 	
@@ -67,19 +87,17 @@ public class MergeSort
 		} //Ends for loop
 	}
 	
-	public static void main(String args[]) {
-		int[] array = new int [20];
-		Scanner input = new Scanner(System.in);
-		System.out.println("Enter elements: ");
-		for (int i = 0; i < a.length; i++)
+	public static void main(String args[])
+	{
+		int n = args.length;
+		int[] array = new int [n];
+		for (int i = 0; i < n; i++)
 		{
-			System.out.print(a[i]);
+			array[i] = Integer.parseInt(args[i]);
 		} //Ends for loop
 		System.out.println("\nUnsorted Array");
 		printArray(array);
-		
-		MergeSort ms = new MergeSort();
-		ms.count = 0;
+	
 		ms.mergeSort(array, 0, array.length - 1);
 		
 		System.out.println("\nSorted Array");
