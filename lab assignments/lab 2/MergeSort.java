@@ -1,20 +1,32 @@
+/**
+ * @author Rifa Safeer Shah & Manuel Castro Mirafuentes
+ * @date 03 - 01 - 2020
+ */
+
+
 class MergeSort {
-  void merge(int array[], int p, int q, int r) {
-    int n1 = q - p + 1;
-    int n2 = r - q;
+<<<<<<< HEAD
+  void merge(int array[], int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
     
     int left[] = new int [n1];
     int right[] = new int [n2];
     
-    for (int i = 0; i < n1; i++){
-      left[i]  = array[p + i];
+    for(int i = 0; i < n1; i++){
+      left[i]  = array[l + i];
     }
     
-    for (int j = 0; j < n2; j++){
-      right[j] = array[q + 1 + j];
+    for(int j = 0; j < n2; j++){
+      right[j] = array[m + 1 + j];
     }
     
-    
+    for(int i = 0; i < n1; i++)
+    {
+    	for (int j = 0; j < n2, j++)
+    	{
+    		
+    	}
      int i = 0;
      int j = 0;
      for(int k = p, k < p; k++)
@@ -62,5 +74,21 @@ class MergeSort {
 	  }
   }
 }
-  
-     
+
+  public static void main(String args[]) {
+    int[] array = new int [20];
+    Scanner input = new Scanner(System.in);
+    System.out.println("Enter elements: ");
+    for (int i = 0; i < a.length; i++) {
+      System.out.print(a[i]);
+    } //Ends for loop
+    System.out.println("Given Array");
+    printArray(array);
+    
+    MergeSort ms = new MergeSort();
+    ms.sort(array, 0, array.length-1);
+    
+    System.out.println("\nSorted Array");
+    printArray(array);
+  } //Ends main
+} //Ends MergeSort
