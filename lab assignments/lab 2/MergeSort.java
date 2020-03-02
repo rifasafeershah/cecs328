@@ -6,7 +6,7 @@
 
 public class MergeSort
 {
-	void merge(int array[], int l, int m, int r)
+	public void merge(int array[], int l, int m, int r)
 	{
 		int n1 = m - l + 1;
 		int n2 = r - m;
@@ -23,36 +23,33 @@ public class MergeSort
 			right[j] = array[m + 1 + j];
 		}
 		
-		for(int i = 0; i < n1; i++)
+		for(int k = l; k < r; k++)
 		{
-			for (int j = 0; j < n2, j++)
+			count++;
+			for(int i = 0; i < n1, i++)
 			{
-				
+				for(int j = 0, j < n2, j++)
+				{
+					if(left[i] <= right[j];
+					{
+						array[k] = left[i];
+					}
+					else
+					{
+						array[k] = right[j];
+					}
+				}
 			}
-		}
-		int i = 0;
-		int j = 0;
-		for(int k = p, k < p; k++)
-		{
-			if(left[i] <= right[j])
+			for(int i = 0; i < n1, i++)
 			{
 				array[k] = left[i];
-				i++;
 			}
-			else
+			for(int j = 0; j < n2; j++)
 			{
 				array[k] = right[j];
-				j++;
-			}	
+			}
 		}
 	}
-     
-     while(i < n1)
-     {
-    	 array[k] = Left[i];
-    	 i++;
-    	 k++;
-     }
   
   	//p is left
   	//q is middle
@@ -86,13 +83,16 @@ public class MergeSort
 		{
 			System.out.print(a[i]);
 		} //Ends for loop
-		System.out.println("Given Array");
+		System.out.println("\nUnsorted Array");
 		printArray(array);
 		
 		MergeSort ms = new MergeSort();
-		ms.sort(array, 0, array.length-1);
+		ms.sort(array, 0, array.length - 1);
 		
 		System.out.println("\nSorted Array");
 		printArray(array);
+		
+		mCount = 0;
+		System.out.println("\nNumber of Comparisions:" + m.Count);
 	} //Ends main
 } //Ends MergeSort
