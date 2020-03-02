@@ -4,8 +4,6 @@
  * @date 03 - 01 - 2020
  */
 
-<<<<<<< HEAD
-
 public class MergeSort
 {
 	int count;
@@ -31,27 +29,24 @@ public class MergeSort
 			right[j] = array[m + 1 + j];
 		}
 		
+		int i = 0;
+		int j = 0;
+		
 		for(int k = l; k < r; k++)
 		{
-			for(int i = 0; i < n1; i++)
+			count++;
+			if(left[i] <= right[j]);
 			{
-				for(int i = 0; i < n1; i++)
-				{
-					for(int j = 0; j < n2; j++)
-					{
-						count++;
-						if(left[i] <= right[j]);
-						{
-							array[k] = left[i];
-						}
-						else
-						{
-							array[k] = right[j];
-						}
-					}
-				}
+				array[k] = left[i];
+				i++;
+			}
+			else
+			{
+				array[k] = right[j];
+				j++;
 			}
 		}
+	}
 	
 	public void mergeSort(int array[], int mLeft, int mRight)
 	{
@@ -87,12 +82,12 @@ public class MergeSort
 		printArray(array);
 		
 		MergeSort ms = new MergeSort();
-		m.Count = 0;
+		ms.count = 0;
 		ms.mergeSort(array, 0, array.length - 1);
 		
 		System.out.println("\nSorted Array");
 		printArray(array);
 		
-		System.out.println("\nNumber of Comparisions:" + m.Count);
+		System.out.println("\nNumber of Comparisions:" + ms.count);
 	} //Ends main
 } //Ends MergeSort
