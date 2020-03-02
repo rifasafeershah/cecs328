@@ -4,6 +4,8 @@
  * @date 03 - 01 - 2020
  */
 
+import java.util.*;
+
 public class MergeSort
 {
 	int count;
@@ -32,16 +34,13 @@ public class MergeSort
 		int i = 0;
 		int j = 0;
 		
-		for(int k = l; k < r; k++)
-		{
+		for(int k = l; k < r; k++) {
 			count++;
-			if(left[i] <= right[j]);
-			{
+			if(left[i] <= right[j]) {
 				array[k] = left[i];
 				i++;
 			}
-			else
-			{
+			else {
 				array[k] = right[j];
 				j++;
 			}
@@ -63,14 +62,12 @@ public class MergeSort
 	public static void printArray(int array[])
 	{
 		int a = array.length;
-		for(int i = 0; i < a; i++)
-		{
+		for(int i = 0; i < a; i++) {
 			System.out.print(array[i] + " ");
 		} //Ends for loop
 	}
 	
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
 		int[] array = new int [20];
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter elements: ");
