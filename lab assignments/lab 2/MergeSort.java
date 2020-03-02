@@ -1,13 +1,16 @@
 /**
+ * This is the MergeSort program that performs the merge sort algorithm on an array of integers.
  * @author Rifa Safeer Shah & Manuel Castro Mirafuentes
  * @date 03 - 01 - 2020
  */
 
+<<<<<<< HEAD
 
 public class MergeSort
 {
 	int count;
 	
+	/* Divides the array into subarrays that are then merged */
 	public void Merge(int array[], int l, int m, int r)
 	{
 		int n1 = m - l + 1;
@@ -16,11 +19,13 @@ public class MergeSort
 		int left[] = new int [n1];
 		int right[] = new int [n2];
 		
+		/* left section of the main array is stored in left array */
 		for(int i = 0; i < n1; i++)
 		{
 			left[i]  = array[l + i];
 		}
 		
+		/* right section of the main array is stored in the right array */
 		for(int j = 0; j < n2; j++)
 		{
 			right[j] = array[m + 1 + j];
@@ -30,37 +35,24 @@ public class MergeSort
 		{
 			for(int i = 0; i < n1; i++)
 			{
-				for(int j = 0; j < n2; j++)
+				for(int i = 0; i < n1; i++)
 				{
-					count++;
-					if(left[i] <= right[j]);
+					for(int j = 0; j < n2; j++)
 					{
-						array[k] = left[i];
-					}
-					else
-					{
-						array[k] = right[j];
+						count++;
+						if(left[i] <= right[j]);
+						{
+							array[k] = left[i];
+						}
+						else
+						{
+							array[k] = right[j];
+						}
 					}
 				}
 			}
 		}
-		
-		for(int k = l; k < r; k++)
-		{
-			for(int i = 0; i < n1; i++)
-			{
-				array[k] = left[i];
-			}
-			for(int j = 0; j < n2; j++)
-			{
-				array[k] = right[j];
-			}
-		}
-	}
-  
-  	//p is left
-  	//q is middle
-  	//r is right
+	
 	public void mergeSort(int array[], int mLeft, int mRight)
 	{
 		if(mLeft < mRight)
@@ -68,17 +60,18 @@ public class MergeSort
 			int mMiddle = (mLeft + mRight) / 2;
 			mergeSort(array, mLeft, mMiddle);
 			mergeSort(array, mMiddle + 1, mRight);
-			Merge(array, mLeft, mMiddle, mRight);	
+			Merge(array, mLeft, mMiddle, mRight);
 		}
 	}
 	
+	/* Prints the elements of the array */
 	public static void printArray(int array[])
 	{
 		int a = array.length;
 		for(int i = 0; i < a; i++)
 		{
 			System.out.print(array[i] + " ");
-		}	
+		} //Ends for loop
 	}
 	
 	public static void main(String args[])
@@ -95,7 +88,7 @@ public class MergeSort
 		
 		MergeSort ms = new MergeSort();
 		m.Count = 0;
-		ms.Sort(array, 0, array.length - 1);
+		ms.mergeSort(array, 0, array.length - 1);
 		
 		System.out.println("\nSorted Array");
 		printArray(array);
