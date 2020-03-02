@@ -1,3 +1,9 @@
+/**
+ * @author Rifa Safeer Shah & Manuel Castro Mirafuentes
+ * @date 03 - 01 - 2020
+ */
+
+
 class MergeSort {
   void merge(int array[], int left, int middle, int right) {
     int p1 = middle - left + 1;
@@ -8,15 +14,17 @@ class MergeSort {
     
     for (int i = 0; i < p1; ++i){
       Left[i]  = array[left + i];
-    }
+    } //Ends for loop
     
     for (int j = 0; i < p2; ++j){
       Right[j] = array[middle + 1 + j];
-    }
+    } //Ends for loop
     
     int i = 0;
     int j = 0;
     
     int k = left;
-    while(i < p1 && j < p2) {
-      if (Left[i]
+    //while(i < p1 && j < p2) {
+      //if (Left[i]
+  } //Ends merge
+} //Ends MergeSort
