@@ -41,6 +41,7 @@ public class MergeSort {
 			}
 			k++;
 		}
+
 		//Copy remaining elements
 		while (i < n1)
 		{
@@ -48,6 +49,7 @@ public class MergeSort {
 			i++;
 			k++;
 		}
+		
 		//Copy remaining elements
 		while (j < n2)
 		{
@@ -56,6 +58,7 @@ public class MergeSort {
 			k++;
 		}
 	}
+	
 	/* Merge the sections */
 	public static void mergeSort(int array[], int mLeft, int mRight) {
 		if(mLeft < mRight) {
@@ -74,26 +77,6 @@ public class MergeSort {
 		} //Ends for loop
 	}//Ends printArray
 	
-	/* Main runner */
-	public static void main(String args[])
-	{
-		int n = args.length;
-		int[] array = new int [n];
-		for (int i = 0; i < n; i++)
-		{
-			array[i] = Integer.parseInt(args[i]);
-		} //Ends for loop
-		System.out.println("\nUnsorted Array");
-		printArray(array);
-	
-		ms.mergeSort(array, 0, array.length - 1);
-		
-		System.out.println("\nSorted Array");
-		printArray(array);
-		
-		System.out.println("\nNumber of Comparisions:" + ms.count);
-=======
-	} //Ends printArray
 	/* Main runner */
 	public static void main(String args[]) {
 		int[] array = new int [args.length];
