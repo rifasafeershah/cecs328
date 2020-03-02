@@ -3,7 +3,6 @@
  * @date 03 - 01 - 2020
  */
 
-
 public class MergeSort
 {
 	void merge(int array[], int l, int m, int r)
@@ -46,14 +45,18 @@ public class MergeSort
 			}	
 		}
 	}
-     
-     while(i < n1)
-     {
-    	 array[k] = Left[i];
-    	 i++;
-    	 k++;
-     }
-  
+	while(i < n1) {
+		array[k] = Left[i];
+    		i++;
+    		k++;
+     	}
+	
+	while (j < n2) {
+		array[k] = Right[i];
+		j++;
+		k++;
+	}
+	
   	//p is left
   	//q is middle
   	//r is right
@@ -64,7 +67,7 @@ public class MergeSort
 			int mMiddle = (mLeft + mRight) / 2;
 			Sort(array, mLeft, mMiddle);
 			Sort(array, mMiddle + 1, mRight);
-			Sort(array, mLeft, mMiddle, mRight);	
+			merge(array, mLeft, mMiddle, mRight);	
 		}
 	}
 	
@@ -90,7 +93,7 @@ public class MergeSort
 		printArray(array);
 		
 		MergeSort ms = new MergeSort();
-		ms.sort(array, 0, array.length-1);
+		ms.Sort(array, 0, array.length-1);
 		
 		System.out.println("\nSorted Array");
 		printArray(array);
