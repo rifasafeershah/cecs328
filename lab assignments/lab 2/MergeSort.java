@@ -31,7 +31,7 @@ public class MergeSort
 		}
 		int i = 0;
 		int j = 0;
-		for(int k = p, k < p; k++)
+		for(int k = p, k < ; k++)
 		{
 			if(left[i] <= right[j])
 			{
@@ -45,14 +45,16 @@ public class MergeSort
 			}	
 		}
 	}
+	/* Insert the rest of the elements from the left array */
 	while(i < n1) {
 		array[k] = Left[i];
     		i++;
     		k++;
      	}
 	
+	/* Insert the rest of the elements from the right areay */
 	while (j < n2) {
-		array[k] = Right[i];
+		array[k] = Right[j];
 		j++;
 		k++;
 	}
